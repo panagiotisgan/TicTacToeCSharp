@@ -14,7 +14,7 @@ namespace TicTacToeAgents
 		{
 		}
 
-		public override async Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard, int? row, int? column)
+		public override async Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard)
 		{
 			// init my beliefs ... 
 			beliefs = new Belief[] { new ICanWin(currentBoard, StateType), new ICanBlockAWin(currentBoard, StateType), new ICanMakeAMove(currentBoard, StateType) };

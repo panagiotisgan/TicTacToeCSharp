@@ -71,7 +71,6 @@ namespace TicTacToeUI
 				else if ("Silly Computer".Equals(selectedValues[i]))
 				{
 					players[i] = new ComputerPlayer(playerState);
-					//players[i] = new SillyComputerPlayer(playerState);
 				}
 				else if ("Complicated Silly Computer".Equals(selectedValues[i]))
 				{

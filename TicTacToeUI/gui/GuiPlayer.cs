@@ -40,7 +40,7 @@ namespace TicTacToeUI.gui
 			ui = parentFrame;
 		}
 
-		public override async Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard, int? row = null, int? column = null)
+		public override async Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard)
 		{
 			// okay, start listening ... 
 			Listen(true);
@@ -96,10 +96,9 @@ namespace TicTacToeUI.gui
 			return listening;
 		}
 
-		public void SelectionMade(int? row, int? column)
+		public void SelectionMade(int row, int column)
 		{
-			if (row.HasValue && column.HasValue)
-				currentAction = new TicTacToeAgentGame.Action(row.Value, column.Value, StateType);
+			currentAction = new TicTacToeAgentGame.Action(row, column, StateType);
 		}
 	}
 }

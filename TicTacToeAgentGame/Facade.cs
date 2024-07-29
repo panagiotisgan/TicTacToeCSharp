@@ -106,7 +106,7 @@ namespace TicTacToeAgentGame
 				// get a move from a player and update the board
 				currentPlayer = players[playerIndex - 1];
 				// get the move ... 
-				Action move = await currentPlayer.DoMove(board, null, null);
+				Action move = await currentPlayer.DoMove(board);
 				// update the board ...
 
 				userInform = $"Player [ + {currentPlayer.GetType().Name} + \" ] \" + {playerIndex} + \" made move [ \" + {move.X} + \", \" + {move.Y} + \" ] ranking: \" + {move.Rank}";
@@ -114,7 +114,7 @@ namespace TicTacToeAgentGame
 				if (3 <= move.X || 3 <= move.Y)
 				{
 					Console.WriteLine("INVALID - RETRY :Player [" + currentPlayer.GetType().Name + " ] " + playerIndex + " made move [ " + move.X + ", " + move.Y + " ] ranking: " + move.Rank);
-					move = await currentPlayer.DoMove(board, move.X, move.Y);
+					move = await currentPlayer.DoMove(board);
 				}
 
 				// i'm doind a little trick here ... I've rigged the playerIndex value

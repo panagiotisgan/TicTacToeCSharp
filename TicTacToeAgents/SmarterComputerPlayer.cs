@@ -11,7 +11,7 @@ namespace TicTacToeAgents
 		public SmarterComputerPlayer(FiniteStateMachine.State stateType) : base(stateType) { }
 
 
-		public override async Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard, int? row, int? column)
+		public override async Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard)
 		{
 			// init my beliefs ... 
 			beliefs = new Belief[] { new ICanWinSmart(currentBoard, StateType), new ICanBlockAWinSmart(currentBoard, StateType), new ICanMakeAMove(currentBoard, StateType) };

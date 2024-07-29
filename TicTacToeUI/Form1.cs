@@ -23,7 +23,6 @@ namespace TicTacToeUI
 		{
 			InitializeComponent();
 
-			//ticTacToeForm = new TicTacToeForm();
 			labels = new Label[3, 3]
 			{    {txt00, txt01, txt02},
 				 {txt10, txt11, txt12},
@@ -43,11 +42,13 @@ namespace TicTacToeUI
 			player2 = null;
 			facade = null;
 
+			selectPlayersFrame = null;
+
 			selectPlayersFrame = new SelectPlayerPanel(this);
 			selectPlayersFrame.Name = "Selected Players";
 
 			selectPlayersFrame.AddOwnedForm(GetSelectPlayersPanel());
-			selectPlayersFrame.Visible = true;
+			selectPlayersFrame.Show();
 		}
 
 		public async Task SelectionMade(IPlayer player1, IPlayer player2)

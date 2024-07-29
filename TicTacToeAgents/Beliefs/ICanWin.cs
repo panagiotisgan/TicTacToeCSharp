@@ -17,6 +17,8 @@ namespace TicTacToeAgents.Beliefs
 
 			Predicate = 0.0;
 
+           int[] backUpBlankState = new int[2];
+
 			int moveX = 0;
 			int moveY = 0;
 
@@ -25,6 +27,14 @@ namespace TicTacToeAgents.Beliefs
 				for (int j = 0; j < FiniteStateMachine.NUMBEROFCOLUMNS && Predicate < 1.0; j++)
 				{
 					FiniteStateMachine.State currState = Grid[i, j];
+					
+					// add it with purpose to fix the bug which override the gui player move in order to win
+					if (currState == FiniteStateMachine.State.blank)
+					{
+						backUpBlankState[0] = i;
+						backUpBlankState[1] = j;
+					}
+
 					Point newPoint = new Point(i, j);
 					if (lookingFor.Equals(currState))
 					{
@@ -57,15 +67,23 @@ namespace TicTacToeAgents.Beliefs
 								moveX = i;
 								moveY = j;
 
-								break;
+                                Action = new TicTacToeAgentGame.Action(moveX, moveY, MyState);
+
+                                break;
 							}
 						}
 					}
 				}
 			}
 
-			Action = new TicTacToeAgentGame.Action(moveX, moveY, MyState);
-		}
+			//if(adjacentPoints.Count == 1)
+			//	Action = new TicTacToeAgentGame.Action(adjacentPoints[0].X, adjacentPoints[0].Y, MyState);
+
+			if(adjacentPoints.Count == 0)
+				Action = new TicTacToeAgentGame.Action(moveX, moveY, MyState);
+			else
+				Action = new TicTacToeAgentGame.Action(backUpBlankState[0], backUpBlankState[1], MyState);
+        }
 
         protected bool IsAdjacent(List<Point> points, Point newPoint)
         {

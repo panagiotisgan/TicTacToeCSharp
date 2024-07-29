@@ -14,6 +14,6 @@ namespace TicTacToeAgentGame
          *  Returns the action the player wishes to take
          *  given the state of the board
          */
-		Task<Action> DoMove(FiniteStateMachine state, int? row, int? column);
+		Task<Action> DoMove(FiniteStateMachine state);
 	}
 }

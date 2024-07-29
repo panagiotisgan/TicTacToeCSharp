@@ -12,7 +12,7 @@ namespace TicTacToeAgents
 			this.stateType = stateType;
 		}
 
-		public async Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard, int? row, int? column)
+		public async Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard)
 		{
 			// okay, first things first. What moves can I do at this state ?
 			List<Point> possibleMoves = FiniteStateMachineExtensions.GetBlankCells(currentBoard);

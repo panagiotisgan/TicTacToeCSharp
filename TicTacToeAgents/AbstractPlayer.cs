@@ -13,7 +13,7 @@ namespace TicTacToeAgents
 
 		protected double Score = 0.0;
 
-		public abstract Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard, int? row, int? column);
+		public abstract Task<TicTacToeAgentGame.Action> DoMove(FiniteStateMachine currentBoard);
 
 		public double GetScore()
 		{
