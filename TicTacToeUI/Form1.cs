@@ -42,6 +42,11 @@ namespace TicTacToeUI
 			player2 = null;
 			facade = null;
 
+			foreach(var item in labels)
+			{
+				item.Enabled = true;
+			}
+
 			selectPlayersFrame = null;
 
 			selectPlayersFrame = new SelectPlayerPanel(this);
@@ -106,11 +111,13 @@ namespace TicTacToeUI
 					if (currState.Equals(FiniteStateMachine.State.cross))
 					{
 						strVal = "X";
+						labels[row, column].Enabled = false;
 					}
 					else if (currState.Equals(FiniteStateMachine.State.nought))
 					{
 						strVal = "O";
-					}
+                        labels[row, column].Enabled = false;
+                    }
 
 					this.labels[row, column].Text = strVal;
 				}
