@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
-using TicTacToeAgentGame;
+using TicTacToeAgentGame.Interfaces;
 
 namespace TicTacToeUI.gui
 {
-	public class SelectPlayerModel
+    public class SelectPlayerModel
 	{
 		private string[] playerTypes = null;
 

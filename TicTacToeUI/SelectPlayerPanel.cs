@@ -1,11 +1,12 @@
 ﻿using System.Collections.ObjectModel;
 using TicTacToeAgentGame;
+using TicTacToeAgentGame.Interfaces;
 using TicTacToeAgents;
 using TicTacToeUI.gui;
 
 namespace TicTacToeUI
 {
-	public partial class SelectPlayerPanel : Form
+    public partial class SelectPlayerPanel : Form
 	{
 		//internal SelectPlayerModel SelectPlayerModel { get; set; }
 

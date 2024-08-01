@@ -1,19 +1,19 @@
 ﻿using System.Threading.Tasks;
 
-namespace TicTacToeAgentGame
+namespace TicTacToeAgentGame.Interfaces
 {
-	public interface IPlayer
-	{
-		/*
+    public interface IPlayer
+    {
+        /*
      *  Computes how close the player is
      *  at completing a match
      */
-		double GetScore();
+        double GetScore();
 
-		/*
+        /*
          *  Returns the action the player wishes to take
          *  given the state of the board
          */
-		Task<Action> DoMove(FiniteStateMachine state);
-	}
+        Task<Action> DoMove(FiniteStateMachine state);
+    }
 }

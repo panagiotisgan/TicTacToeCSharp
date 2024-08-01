@@ -1,11 +1,12 @@
 using System.Collections.ObjectModel;
 using TicTacToeAgentGame;
+using TicTacToeAgentGame.Interfaces;
 using TicTacToeUI.gui;
 
 namespace TicTacToeUI
 {
-	public partial class Form1 : Form, Facade.IStateChangedListener, SelectPlayerPanel.ISelectionListener
-	{
+    public partial class Form1 : Form, SelectPlayerPanel.ISelectionListener, IStateChangedListener
+    {
 
 		private Facade facade = null;
 		private Form selectPlayersFrame = null;

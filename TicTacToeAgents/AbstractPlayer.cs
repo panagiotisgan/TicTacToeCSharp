@@ -1,8 +1,9 @@
 ﻿using TicTacToeAgentGame;
+using TicTacToeAgentGame.Interfaces;
 
 namespace TicTacToeAgents
 {
-	public abstract class AbstractPlayer : IPlayer
+    public abstract class AbstractPlayer : IPlayer
 	{
 		protected FiniteStateMachine.State StateType;
 

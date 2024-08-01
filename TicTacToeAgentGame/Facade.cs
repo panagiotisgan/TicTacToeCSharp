@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using TicTacToeAgentGame.Interfaces;
 
 namespace TicTacToeAgentGame
 {
-	public class Facade : IDisposable
+    public class Facade : IDisposable
 	{
 		//<editor-fold desc="event listener interface & methods">
 		/**
@@ -19,10 +20,10 @@ namespace TicTacToeAgentGame
 
 		public List<IPlayer> winnersBoard = new List<IPlayer>();
 
-		public interface IStateChangedListener
-		{
-			void StateChanged(FiniteStateMachine currentBoard);
-		}
+		//public interface IStateChangedListener
+		//{
+		//	void StateChanged(FiniteStateMachine currentBoard);
+		//}
 
 		private ObservableCollection<IStateChangedListener> eventListeners = new ObservableCollection<IStateChangedListener>();
 
