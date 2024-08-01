@@ -8,8 +8,6 @@ namespace TicTacToeUI
 {
     public partial class SelectPlayerPanel : Form
 	{
-		//internal SelectPlayerModel SelectPlayerModel { get; set; }
-
 		internal ObservableCollection<ISelectionListener> eventListeners = new ObservableCollection<ISelectionListener>();
 		private Form1 ParentFrame = null;
 		private string[] playerTypes = null;
@@ -21,8 +19,6 @@ namespace TicTacToeUI
 
 		public SelectPlayerPanel(Form1 ticTacToeForm)
 		{
-			//this.SelectPlayerModel = new SelectPlayerModel();
-
 			InitializeComponent();
 
 			playerTypes = new string[] { "Human", "Silly Computer", "Complicated Silly Computer" };
@@ -56,8 +52,8 @@ namespace TicTacToeUI
 		private async void ActionPerformed()
 		{
 			string[] selectedValues = new string[] { "", "" };
-			selectedValues[0] = (string)cmbPlayer1Type.SelectedItem;
-			selectedValues[1] = (string)cmbPlayer2Type.SelectedItem;
+			selectedValues[0] = (string)cmbPlayer1Type.SelectedItem!;
+			selectedValues[1] = (string)cmbPlayer2Type.SelectedItem!;
 
 			IPlayer[] players = new IPlayer[] { null, null };
 			for (int i = 0; i < selectedValues.Count(); i++)
