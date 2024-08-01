@@ -6,7 +6,7 @@ using TicTacToeAgentGame.Interfaces;
 
 namespace TicTacToeAgentGame
 {
-    public class Facade : IDisposable
+    public class Facade
     {
         //<editor-fold desc="event listener interface & methods">
         /**
@@ -60,19 +60,7 @@ namespace TicTacToeAgentGame
             SetPlayer2(player2);
         }
 
-        public void Dispose()
-        {
-            disposed = true;
-        }
-
-        private bool disposed = false;
-
         int d = 0;
-
-        public bool Disposed()
-        {
-            return disposed;
-        }
 
         public bool Won()
         {
@@ -98,7 +86,7 @@ namespace TicTacToeAgentGame
 
             int playerIndex = 1;
             // actually, while none of my rules fire ...
-            while (!this.Won() && !this.Draw() && !Disposed())
+            while (!this.Won() && !this.Draw())
             {
                 // get a move from a player and update the board
                 currentPlayer = players[playerIndex - 1];

@@ -63,10 +63,10 @@ namespace TicTacToeUI
 			this.player1 = player1;
 			this.player2 = player2;
 
-			if (facade != null)
-			{
-				facade.Dispose();
-			}
+			//if (facade != null)
+			//{
+			//	facade.Dispose();
+			//}
 
 			facade = new Facade(player1, player2);
 			facade.AddSelectionListener(this);
