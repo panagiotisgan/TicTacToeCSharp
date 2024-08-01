@@ -24,9 +24,6 @@ namespace TicTacToeAgents
 			double iCanBlockAWin = beliefs[1].IsTrue();
 			double iCanMove = beliefs[2].IsTrue();
 
-			//Console.WriteLine("ICanWinSmart: " + iCanWin + " ICanBlockSmart: " + iCanBlockAWin + " ICanMove: " + iCanMove);
-
-
 			// if i'm ambivalent ... 0.6 is a certain defeat in the next move ! 
 			if (iCanWin == iCanBlockAWin)
 			{

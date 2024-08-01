@@ -6,8 +6,7 @@ namespace TicTacToeAgents
     public class SillyComputerPlayer : IPlayer
 	{
 		private FiniteStateMachine.State stateType;
-
-		/** Creates a new instance of SillyComputerPlayer */
+		
 		public SillyComputerPlayer(FiniteStateMachine.State stateType)
 		{
 			this.stateType = stateType;
