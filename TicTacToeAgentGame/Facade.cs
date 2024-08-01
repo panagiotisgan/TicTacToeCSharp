@@ -20,10 +20,6 @@ namespace TicTacToeAgentGame
 
         public List<IPlayer> winnersBoard = new List<IPlayer>();
 
-        //public interface IStateChangedListener
-        //{
-        //	void StateChanged(FiniteStateMachine currentBoard);
-        //}
 
         private ObservableCollection<IStateChangedListener> eventListeners = new ObservableCollection<IStateChangedListener>();
 
@@ -40,7 +36,7 @@ namespace TicTacToeAgentGame
         public void NotifyListeners(FiniteStateMachine board)
         {
             var listeners = eventListeners.GetEnumerator();
-            //java.util.Iterator<Object> listeners = eventListeners.iterator();
+            
             while (listeners.MoveNext())
             {
                 ((IStateChangedListener)listeners.Current).StateChanged(board);

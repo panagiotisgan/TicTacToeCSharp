@@ -47,15 +47,12 @@ namespace TicTacToeUI.gui
 
 			MessageBox.Show(ui, "Make a move");
 
-			//TODO C# Must make it work
 			if (row.HasValue && column.HasValue)
 				SelectionMade(row.Value, column.Value);
 			else
 			{
 				currentAction = null;
 			}
-
-			//SelectionMade()
 
 			while (currentAction == null)
 			{

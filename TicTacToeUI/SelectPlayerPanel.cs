@@ -10,11 +10,7 @@ namespace TicTacToeUI
 	{
 		internal ObservableCollection<ISelectionListener> eventListeners = new ObservableCollection<ISelectionListener>();
 		private Form1 ParentFrame = null;
-		private string[] playerTypes = null;
-		public interface ISelectionListener
-		{
-			public Task SelectionMade(IPlayer player1, IPlayer player2);
-		}
+		private string[] playerTypes = null;	
 
 
 		public SelectPlayerPanel(Form1 ticTacToeForm)

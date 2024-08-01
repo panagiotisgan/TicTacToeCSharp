@@ -5,7 +5,7 @@ using TicTacToeUI.gui;
 
 namespace TicTacToeUI
 {
-    public partial class Form1 : Form, SelectPlayerPanel.ISelectionListener, IStateChangedListener
+    public partial class Form1 : Form, ISelectionListener, IStateChangedListener
     {
 
 		private Facade facade = null;
@@ -96,8 +96,6 @@ namespace TicTacToeUI
 
 			labelScore1.Text = playerOneCounter.ToString();
 			labelScore2.Text = playerTwoCounter.ToString();
-			// Equal with the above Java Code-> error produce 
-			//Thread newThread = new Thread(new ThreadStart(() => facade.Begin()));
 		}
 
 		public void StateChanged(FiniteStateMachine currentBoard)
